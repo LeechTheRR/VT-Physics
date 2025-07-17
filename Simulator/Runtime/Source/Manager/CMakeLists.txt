@@ -1,3 +1,5 @@
+
+
 PROJECT(VP-Manager)
 
 FIND_PACKAGE(spdlog CONFIG REQUIRED)
@@ -15,9 +17,13 @@ SET(DEPENDENCY_LIBS
         vpdfsph
         vpimm
         vpimmct
+        vpmysph
 )
 
 ADD_LIBRARY(vpmanager STATIC ${RUNTIME_MANAGER_HEADER_FILES} ${RUNTIME_MANAGER_SRC_FILES})
 TARGET_LINK_LIBRARIES(vpmanager PUBLIC ${DEPENDENCY_LIBS})
 TARGET_LINK_LIBRARIES(vpmanager PRIVATE vplogger)
 ADD_DEPENDENCIES(vpmanager ${DEPENDENCY_LIBS})
+
+
+

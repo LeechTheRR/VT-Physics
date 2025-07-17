@@ -1,0 +1,9 @@
+
+
+INCLUDE_DIRECTORIES(${VP_RUNTIME_ROOT}/Include ${VP_LIB_ROOT}/Include)
+
+ADD_EXECUTABLE(Example.MYSPH.usage Usage.cpp)
+TARGET_LINK_LIBRARIES(Example.MYSPH.usage PUBLIC vpmanager)
+
+
+

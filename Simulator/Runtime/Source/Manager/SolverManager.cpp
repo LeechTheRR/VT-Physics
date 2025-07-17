@@ -5,6 +5,7 @@
 #include "Solvers/DFSPH/DFSPHSolver.hpp"
 #include "Solvers/IMM/IMMSolver.hpp"
 #include "Solvers/IMM-CT/IMMCTSolver.hpp"
+#include "Solvers/MYSPH/MYSPHSolver.hpp"
 
 namespace VT_Physics {
 
@@ -33,6 +34,10 @@ namespace VT_Physics {
                 break;
             case eSolverType::IMMCT:
                 solver = new immct::IMMCTSolver(m_cuda_threadNum_per_block);
+                m_solvers.push_back(solver);
+                break;
+            case eSolverType::MYSPH:
+                solver = new mysph::MYSPHSolver(m_cuda_threadNum_per_block);
                 m_solvers.push_back(solver);
                 break;
         }
